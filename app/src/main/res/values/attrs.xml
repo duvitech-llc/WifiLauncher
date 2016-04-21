@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CoverFlowPager">0</declare-styleable>
+    <declare-styleable name="CoverFlowPager_listSpacing">0</declare-styleable>
+    <declare-styleable name="CoverFlowPager_listRadius">0</declare-styleable>
+    <declare-styleable name="CoverFlowPager_gravityFactor">0</declare-styleable>
+    <declare-styleable name="CoverFlowPager_selectedSpacing">0</declare-styleable>
+    <declare-styleable name="CoverFlowPager_visibleIndex">0</declare-styleable>
+    <declare-styleable name="CoverFlowPager_rotateFactor">0</declare-styleable>
+    <declare-styleable name="CoverFlowPager_rotateLimit">0</declare-styleable>
+    <declare-styleable name="CoverFlowPager_alphaFactor">0</declare-styleable>
+    <declare-styleable name="CoverFlowPager_scaleFactor">0</declare-styleable>
+</resources>
