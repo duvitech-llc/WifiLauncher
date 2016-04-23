@@ -27,9 +27,6 @@ public class LauncherCoverFlowAdapter extends com.six15.wifilauncher.lib.Abstrac
         ImageView coverImage = (ImageView) v.findViewById(R.id.cover_image);
         coverImage.setImageResource(item.imageResourceId);
 
-        TextView title = (TextView) v.findViewById(R.id.title);
-        title.setText(item.title);
-
         ImageView reflectionImage = (ImageView) v.findViewById(R.id.reflection_image);
         reflectionImage.setImageBitmap(getReflectionBitmap(((BitmapDrawable) coverImage.getDrawable()).getBitmap()));
 

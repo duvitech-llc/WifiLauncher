@@ -80,7 +80,7 @@ public class HomeScreen extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homescreen);
-
+/*
         Button btnAppDrawer = (Button) findViewById(R.id.btnDrawer);
         btnAppDrawer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +88,7 @@ public class HomeScreen extends FragmentActivity {
                 showAppDrawer();
             }
         });
-
+*/
 
         CoverFlowContainer mContainer = (CoverFlowContainer) findViewById(R.id.pager_container);
 
