@@ -12,6 +12,14 @@
         -->
     </style>
 
+    <style name="Theme.AppCompat.Dark.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:background">#FF000000</item>
+    </style>
+
     <style name="SampleTheme" parent="android:Theme">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
