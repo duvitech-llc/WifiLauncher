@@ -1,6 +1,11 @@
 package com.six15.wifilauncher;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +30,9 @@ public class LauncherCoverFlowAdapter extends com.six15.wifilauncher.lib.Abstrac
 
         View v = LayoutInflater.from(context).inflate(R.layout.cover_item, null);
         ImageView coverImage = (ImageView) v.findViewById(R.id.cover_image);
+
+        //Bitmap bm = BitmapFactory.decodeResource( context.getResources(), item.imageResourceId);
+        //coverImage.setImageBitmap(bm);
         coverImage.setImageResource(item.imageResourceId);
 
         ImageView reflectionImage = (ImageView) v.findViewById(R.id.reflection_image);

@@ -6,14 +6,14 @@
 
     <ImageView android:id="@+id/cover_image"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="128px"
         android:scaleType="centerCrop"
         android:contentDescription="@string/coverimg" />
 
     <ImageView android:id="@+id/reflection_image"
         android:layout_below="@id/cover_image"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="64px"
         android:layout_marginTop="1dp"
         android:scaleType="fitXY"
         android:contentDescription="@string/refimage" />
