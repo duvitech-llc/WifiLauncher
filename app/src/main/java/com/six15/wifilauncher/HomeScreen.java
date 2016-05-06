@@ -29,11 +29,11 @@ public class HomeScreen extends FragmentActivity {
     ViewPager pager;
 
     private final List<LaunchItem> launchItems = Arrays.asList(
-            new LaunchItem(R.drawable.browser_icon, "Web Browser", "web"),
-            new LaunchItem(R.drawable.ar_icon, "Telestration", "ar"),
+            new LaunchItem(R.drawable.web_icon, "Web Browser", "web"),
+            new LaunchItem(R.drawable.tele_icon, "Telestration", "ar"),
             new LaunchItem(R.drawable.camera_icon, "Camera", "camera"),
-            new LaunchItem(R.drawable.app_drawer_icon, "Applications",  "apps"),
-            new LaunchItem(R.drawable.setting_icon, "Settings", "config")
+            new LaunchItem(R.drawable.all_icon, "Applications",  "apps"),
+            new LaunchItem(R.drawable.settings_icon, "Settings", "config")
     );
 
 
@@ -42,15 +42,15 @@ public class HomeScreen extends FragmentActivity {
         int iCurrentItem = 0;
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
-                Toast.makeText(this,"Vol UP Pressed!", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this,"Vol UP Pressed!", Toast.LENGTH_SHORT).show();
                 pager.arrowScroll(View.FOCUS_RIGHT);
                 return true;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
-                Toast.makeText(this,"Vol DN Pressed!", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this,"Vol DN Pressed!", Toast.LENGTH_SHORT).show();
                 pager.arrowScroll(View.FOCUS_LEFT);
                 return true;
             case KeyEvent.KEYCODE_MENU:
-                Toast.makeText(this,"Launch", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this,"Launch", Toast.LENGTH_SHORT).show();
                 iCurrentItem = pager.getCurrentItem();
                 Log.i(TAG,"Item Selected: "+ iCurrentItem);
                 launchIntent(launchItems.get(iCurrentItem).intentName);

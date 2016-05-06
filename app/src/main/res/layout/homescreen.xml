@@ -25,6 +25,8 @@
         android:textColor="#ffffff"
         android:gravity="center"
         android:text="Selected Icon"
-        android:paddingTop="10dp" />
+        android:textSize="32sp"
+        android:paddingTop="8dp"
+        android:textStyle="bold" />
 </LinearLayout>
 
