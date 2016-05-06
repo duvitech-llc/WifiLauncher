@@ -1,10 +1,13 @@
 package com.six15.wifilauncher;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -22,39 +25,35 @@ import java.util.List;
 
 public class HomeScreen extends FragmentActivity {
 
+    public static String TAG = "HomeScreen";
+    ViewPager pager;
+
     private final List<LaunchItem> launchItems = Arrays.asList(
-            new LaunchItem(R.drawable.browser_icon, "Web Browser",""),
-            new LaunchItem(R.drawable.ar_icon, "Telestration",""),
-            new LaunchItem(R.drawable.camera_icon, "Camera",""),
-            new LaunchItem(R.drawable.app_drawer_icon, "Applications",""),
-            new LaunchItem(R.drawable.setting_icon, "Settings","")
+            new LaunchItem(R.drawable.browser_icon, "Web Browser", "web"),
+            new LaunchItem(R.drawable.ar_icon, "Telestration", "ar"),
+            new LaunchItem(R.drawable.camera_icon, "Camera", "camera"),
+            new LaunchItem(R.drawable.app_drawer_icon, "Applications",  "apps"),
+            new LaunchItem(R.drawable.setting_icon, "Settings", "config")
     );
 
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        int currentPosition = 0;
+        int iCurrentItem = 0;
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
                 Toast.makeText(this,"Vol UP Pressed!", Toast.LENGTH_SHORT).show();
-                /*
-                currentPosition = fancyCoverFlow.getSelectedItemPosition();
-                currentPosition++;
-                if(currentPosition>= fancyCoverFlow.getCount())  currentPosition = fancyCoverFlow.getCount() -1;
-                fancyCoverFlow.setSelection(currentPosition);
-                */
+                pager.arrowScroll(View.FOCUS_RIGHT);
                 return true;
             case KeyEvent.KEYCODE_VOLUME_DOWN:
                 Toast.makeText(this,"Vol DN Pressed!", Toast.LENGTH_SHORT).show();
-                /*
-                currentPosition = fancyCoverFlow.getSelectedItemPosition();
-                currentPosition--;
-                if(currentPosition<0) currentPosition = 0;
-                fancyCoverFlow.setSelection(currentPosition);
-                */
+                pager.arrowScroll(View.FOCUS_LEFT);
                 return true;
             case KeyEvent.KEYCODE_MENU:
                 Toast.makeText(this,"Launch", Toast.LENGTH_SHORT).show();
+                iCurrentItem = pager.getCurrentItem();
+                Log.i(TAG,"Item Selected: "+ iCurrentItem);
+                launchIntent(launchItems.get(iCurrentItem).intentName);
                 return true;
             default:
                 return super.onKeyUp(keyCode, event);
@@ -80,6 +79,8 @@ public class HomeScreen extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homescreen);
+
+
 /*
         Button btnAppDrawer = (Button) findViewById(R.id.btnDrawer);
         btnAppDrawer.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +93,7 @@ public class HomeScreen extends FragmentActivity {
 
         CoverFlowContainer mContainer = (CoverFlowContainer) findViewById(R.id.pager_container);
 
-        ViewPager pager = mContainer.getViewPager();
+        pager = mContainer.getViewPager();
 
         PagerAdapter adapter = new LauncherCoverFlowAdapter(HomeScreen.this, launchItems);
         final TextView selectedTitle = (TextView) findViewById(R.id.selected_title);
@@ -117,9 +118,29 @@ public class HomeScreen extends FragmentActivity {
         });
     }
 
-    public void showAppDrawer(){
-        Intent intent1= new Intent(this, ApplistActivity.class);
-        startActivity(intent1);
+    public void launchIntent(String intentName){
+        Intent launchIntent = null;
+        switch(intentName){
+            case "web":
+                launchIntent = new Intent(Intent.ACTION_VIEW);
+                launchIntent.setData(Uri.parse("http://www.youtube.com"));
+                break;
+            case "config":
+                launchIntent = new Intent(android.provider.Settings.ACTION_SETTINGS);
+                break;
+            case "camera":
+                launchIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                break;
+            case "apps":
+                launchIntent = new Intent(this, ApplistActivity.class);
+            case "ar":
+                launchIntent = new Intent(this, ApplistActivity.class);
+            default:
+                break;
+        }
+
+        if(launchIntent != null)
+            startActivity(launchIntent);
     }
 
 }

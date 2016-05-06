@@ -1,5 +1,7 @@
 package com.six15.wifilauncher;
 
+import android.content.Intent;
+
 /**
  * Created by George on 4/22/2016.
  */

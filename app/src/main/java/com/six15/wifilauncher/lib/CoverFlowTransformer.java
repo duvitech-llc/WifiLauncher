@@ -27,10 +27,10 @@ public class CoverFlowTransformer implements ViewPager.PageTransformer {
 
     public CoverFlowTransformer(Context context, AttributeSet attrs) {
         //TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CoverFlowPager, 0, 0);
-        spacing = 0;
-        selectedSpacing = 0;
-        visibleIndex = 4;
-        rotateFactor = 0;
+        spacing = 1;
+        selectedSpacing = 1;
+        visibleIndex = 3;
+        rotateFactor = .80f;
         rotateLimit = 0;
         alphaFactor = 0;
         scaleFactor = 0;

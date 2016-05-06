@@ -23,8 +23,9 @@ public class VelocityViewPager extends ViewPager implements GestureDetector.OnGe
         mGestureDetector = new GestureDetector(context, this);
     }
 
+
     // We have to intercept this touch event else fakeDrag functions won't work as it will
-// be in a real drag when we want to initialise the fake drag.
+    // be in a real drag when we want to initialise the fake drag.
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         return true;

@@ -2,17 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
 
     <com.six15.wifilauncher.lib.CoverFlowContainer
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/pager_container"
-        android:layout_width="match_parent"
-        android:layout_height="400dp">
-        <com.six15.wifilauncher.lib.VelocityViewPager
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </com.six15.wifilauncher.lib.VelocityViewPager>
+        android:layout_width="fill_parent"
+        android:layout_height="160dp">
+            <com.six15.wifilauncher.lib.VelocityViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.six15.wifilauncher.lib.VelocityViewPager>
     </com.six15.wifilauncher.lib.CoverFlowContainer>
 
     <TextView

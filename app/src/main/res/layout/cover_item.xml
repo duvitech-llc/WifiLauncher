@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView android:id="@+id/cover_image"
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/coverimg" />
+        android:contentDescription="@string/coverimg"
+        android:layout_gravity="center" />
 
     <ImageView android:id="@+id/reflection_image"
         android:layout_below="@id/cover_image"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
         android:layout_marginTop="1dp"
         android:scaleType="fitXY"
-        android:contentDescription="@string/refimage" />
+        android:contentDescription="@string/refimage"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
